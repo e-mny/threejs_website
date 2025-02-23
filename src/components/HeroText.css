@@ -1,0 +1,55 @@
+.flip-word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  font-size: 2rem;
+  gap: 0.2rem;
+}
+
+.letter-container {
+  position: relative;
+  width: 1.2rem;
+  height: 2rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-origin: bottom;
+}
+
+.panel.front {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+}
+
+.panel.back {
+  background: black;
+  color: white;
+  transform: rotateX(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+}
+
+.flip-word {
+  display: flex;
+  gap: 0.1rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.flip-word.visible {
+  opacity: 1;
+  visibility: visible;
+}
